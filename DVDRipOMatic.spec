@@ -1,21 +1,18 @@
 Name:           DVDRipOMatic
 Version:        0.95
-Release:        4%{?dist}
+Release:        5%{?dist}
 Summary:        Simple DVD to XviD ripping application
 Group:          Applications/Multimedia
 License:        GPL
 URL:            http://dvdripomatic.sourceforge.net
 Source0:        http://dl.sourceforge.net/sourceforge/%{name}/%{name}-%{version}.tar.bz2
+Source1:        %{name}.desktop
 Patch0:         DVDRipOMatic-0.95-newmplayerfix.patch
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 BuildArch:      noarch
+
 BuildRequires:  desktop-file-utils
-Requires:       bc
-Requires:       kdewebdev
-Requires:       kdebase
-Requires:       mencoder
-Requires:       mplayer
-Requires:       transcode
+Requires:       kdebase3, kdewebdev, bc, mencoder, mplayer, transcode
 
 %description
 DVD Rip-O-Matic is a simple DVD-to-XviD ripping application developed by Dik
@@ -31,19 +28,7 @@ the next-next-next-finish way.
 
 
 %build
-# Build desktop icons
-cat >%{name}.desktop <<EOF
-[Desktop Entry]
-Encoding=UTF-8
-Name=%{name}
-GenericName=: DVD Ripping Tool
-Comment=%{summary}
-Exec=dvdripomatic
-Icon=dvd_unmount
-Terminal=false
-Type=Application
-Categories=Qt;KDE;AudioVideo;
-EOF
+#nothing to build
 
 #Create simple scripts for easy launching from the command line.
 cat << EOF > dvdripomatic
@@ -62,9 +47,9 @@ install -pm0644 banner.png %{buildroot}%{_datadir}/apps/%{name}
 install -pm0755 DVDScan %{buildroot}%{_datadir}/apps/%{name}
 install -pm0755 dvdripomatic %{buildroot}%{_bindir}
 
-desktop-file-install --vendor dribble \
+desktop-file-install --vendor "" \
                      --dir %{buildroot}%{_datadir}/applications \
-                     %{name}.desktop
+                     %{SOURCE1}
 
 
 %clean
@@ -73,13 +58,16 @@ rm -rf %{buildroot}
 
 %files
 %defattr(-,root,root,-)
-%{_datadir}/apps/%{name}
-%{_datadir}/applications/dribble-%{name}.desktop
-%{_bindir}/dvdripomatic
 %doc Changelog README
+%{_datadir}/apps/%{name}
+%{_datadir}/applications/%{name}.desktop
+%{_bindir}/dvdripomatic
 
 
 %changelog
+* Tue Sep 09 2008 Xavier Lamien <lxtnow[at]gmail.com> - 0.95-5
+- Update files and rebuild for rpmfusion inclusion.
+
 * Mon Mar 12 2007 Ian Chapman <packages@amiga-hardware.com> 0.95-4%{?dist}
 - Added patch to support newer versions of mplayer
 
