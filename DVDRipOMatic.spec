@@ -1,6 +1,6 @@
 Name:           DVDRipOMatic
 Version:        0.95
-Release:        5%{?dist}
+Release:        6%{?dist}
 Summary:        Simple DVD to XviD ripping application
 Group:          Applications/Multimedia
 License:        GPL
@@ -65,6 +65,9 @@ rm -rf %{buildroot}
 
 
 %changelog
+* Sun Mar 29 2009 Thorsten Leemhuis <fedora [AT] leemhuis [DOT] info> - 0.95-6
+- rebuild for new F11 features
+
 * Tue Sep 09 2008 Xavier Lamien <lxtnow[at]gmail.com> - 0.95-5
 - Update files and rebuild for rpmfusion inclusion.
 
