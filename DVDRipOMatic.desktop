@@ -6,4 +6,4 @@ Exec=dvdripomatic
 Icon=dvd_unmount
 Terminal=false
 Type=Application
-Categories=Qt;KDE;AudioVideo;
+Categories=Qt;KDE;AudioVideo;X-AudioVideoImport;
