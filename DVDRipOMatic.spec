@@ -1,6 +1,6 @@
 Name:           DVDRipOMatic
 Version:        0.95
-Release:        8%{?dist}
+Release:        9%{?dist}
 Summary:        Simple DVD to XviD ripping application
 Group:          Applications/Multimedia
 License:        GPL
@@ -65,6 +65,9 @@ rm -rf %{buildroot}
 
 
 %changelog
+* Sun Mar 03 2013 Nicolas Chauvet <kwizart@gmail.com> - 0.95-9
+- Mass rebuilt for Fedora 19 Features
+
 * Wed Feb 08 2012 Nicolas Chauvet <kwizart@gmail.com> - 0.95-8
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_17_Mass_Rebuild
 
