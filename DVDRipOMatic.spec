@@ -1,6 +1,6 @@
 Name:           DVDRipOMatic
 Version:        0.95
-Release:        11%{?dist}
+Release:        12%{?dist}
 Summary:        Simple DVD to XviD ripping application
 Group:          Applications/Multimedia
 License:        GPL
@@ -42,7 +42,7 @@ EOF
 rm -rf %{buildroot}
 mkdir -p %{buildroot}%{_datadir}/apps/%{name}
 mkdir -p %{buildroot}%{_bindir}
-install -pm0644 %{name}.kmdr %{buildroot}%{_datadir}/apps/%{name}
+install -pm0755 %{name}.kmdr %{buildroot}%{_datadir}/apps/%{name}
 install -pm0644 banner.png %{buildroot}%{_datadir}/apps/%{name}
 install -pm0755 DVDScan %{buildroot}%{_datadir}/apps/%{name}
 install -pm0755 dvdripomatic %{buildroot}%{_bindir}
@@ -65,6 +65,9 @@ rm -rf %{buildroot}
 
 
 %changelog
+* Mon Aug 01 2016 Sérgio Basto <sergio@serjux.com> - 0.95-12
+- Fix permissions of DVDRipOMatic.kmdr
+
 * Sun Aug 31 2014 Sérgio Basto <sergio@serjux.com> - 0.95-11
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_21_22_Mass_Rebuild
 
