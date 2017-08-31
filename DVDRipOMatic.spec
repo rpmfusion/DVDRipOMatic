@@ -1,6 +1,6 @@
 Name:           DVDRipOMatic
 Version:        0.95
-Release:        13%{?dist}
+Release:        14%{?dist}
 Summary:        Simple DVD to XviD ripping application
 Group:          Applications/Multimedia
 License:        GPL
@@ -65,6 +65,9 @@ rm -rf %{buildroot}
 
 
 %changelog
+* Thu Aug 31 2017 RPM Fusion Release Engineering <kwizart@rpmfusion.org> - 0.95-14
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_27_Mass_Rebuild
+
 * Sat Mar 18 2017 RPM Fusion Release Engineering <kwizart@rpmfusion.org> - 0.95-13
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_26_Mass_Rebuild
 
